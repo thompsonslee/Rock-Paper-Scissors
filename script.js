@@ -1,19 +1,26 @@
 Math.random()
-let computerhand = Math.floor((Math.random()*3) +1)
-let playerhand = parseInt(prompt("enter 1,2,3"))
+let computerhand 
+console.log(computerhand);
 
-if (playerhand === 1 || playerhand === 2 || playerhand === 3){
-    checkgame()
-}
+const rock = document.getElementById("rock")
+const paper = document.getElementById("paper")
+const scissors = document.getElementById("scissors")
+
+rock.addEventListener("click", function(){
+    checkgame(1)
+})
+paper.addEventListener("click", function(){
+    checkgame(2)
+})
+scissors.addEventListener("click", function(){
+    checkgame(3)
+})
 
 
+function checkgame(playerhand){
+    let computerhand = Math.floor((Math.random()*3) +1)
+    console.log (computerhand)
 
-
-
-
-function checkgame(){
-
-    
     if (computerhand === 1){
         if (playerhand === 1){
             alert ("Tie!")
@@ -52,3 +59,8 @@ function checkgame(){
         }
     }
 }
+
+
+
+
+
