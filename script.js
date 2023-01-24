@@ -98,6 +98,17 @@ function scoring(result){
         console.log (computerscore)
         console.log (playerscore)
     }
+    const newgame =document.getElementById("restartgame")
+    newgame.addEventListener("click",restartgame)
+    function restartgame(){
+        computerscore = 0
+        playerscore = 0
+        document.getElementById("playerscore").innerHTML = "0"
+        document.getElementById("computerscore").innerHTML = "0"
+        document.getElementById("whowon").innerHTML = ""
+        document.getElementById("computerhand").innerHTML = ""
+        document.getElementById("playerhand").innerHTML = ""
+    }
 
 
 
