@@ -21,7 +21,18 @@ function checkgame(playerhand){
     let computerhand = Math.floor((Math.random()*3) +1)
     console.log (computerhand)
 
+    if (playerhand === 1){
+        document.getElementById("playerhand").innerHTML = "Rock"
+    }
+    else if (playerhand === 2){
+        document.getElementById("playerhand").innerHTML = "paper"
+    }
+    else if (playerhand === 3){
+        document.getElementById("playerhand").innerHTML = "Scissors"
+    }
+
     if (computerhand === 1){
+        document.getElementById("computerhand").innerHTML = "Rock"
         if (playerhand === 1){
             scoring("tie")
         }
@@ -35,6 +46,7 @@ function checkgame(playerhand){
 
 
     else if (computerhand === 2){
+        document.getElementById("computerhand").innerHTML = "Paper"
         if (playerhand === 1){
             scoring("computerwin")
         }
@@ -48,6 +60,7 @@ function checkgame(playerhand){
 
 
     else if (computerhand === 3){
+        document.getElementById("computerhand").innerHTML = "Scissors"
         if (playerhand === 1){
             scoring("playerwin")
         }
@@ -72,13 +85,15 @@ function scoring(result){
     else if (result === "playerwin"){
             playerscore += 1
             document.getElementById("playerscore").innerHTML = playerscore
+            document.getElementById("whowon").innerHTML = "Player Won"
         }
     else if (result === "computerwin"){
             computerscore += 1
             document.getElementById("computerscore").innerHTML = computerscore
+            document.getElementById("whowon").innerHTML = "Enemy Won"
         }
     else if (result === "tie"){ 
-            return ("tie")
+        document.getElementById("whowon").innerHTML = "Draw"
         }
         console.log (computerscore)
         console.log (playerscore)
